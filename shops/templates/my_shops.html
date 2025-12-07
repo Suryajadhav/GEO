@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Shops</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #4c72ff, #6ad0ff);
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 60px auto;
+        background: white;
+        padding: 20px 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background: #4c72ff;
+        color: white;
+    }
+    tr:hover {
+        background: #f9f9f9;
+    }
+    .toggle-btn {
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        border: none;
+        cursor: pointer;
+        color: white;
+    }
+    .enable {
+        background: #28a745;
+    }
+    .disable {
+        background: #dc3545;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>My Shops.....</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Shop Name</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for shop in shops %}
+            <tr>
+                <td>{{ shop.name }}</td>
+                <td>{{ shop.category.name }}</td>
+                <td>{{ shop.is_active|yesno:"Active,Disabled" }}</td>
+                <td>
+                    <a href="{% url 'shops:shop_toggle_active' shop.id %}">
+                        <button class="toggle-btn {% if shop.is_active %}disable{% else %}enable{% endif %}">
+                            {% if shop.is_active %}Disable{% else %}Enable{% endif %}
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" style="text-align:center;">No shops found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
