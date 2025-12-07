@@ -2,7 +2,7 @@
 Installation
 1. Clone the Repository
 git clone <your-repo-url>
-cd geoshop
+change dir to project dir.
 
 2. Docker Setup
 
