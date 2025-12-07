@@ -21,7 +21,7 @@ Start a PostGIS database container.
 Run Django migrations automatically.
 
 Start the Django development server at http://localhost:8000
-.
+----------------------------------------------
 
 Database Migration
 
@@ -44,7 +44,7 @@ Once the containers are running, open your browser:
 http://localhost:8000
 
 
-
+---------------------------------------------
 
 Commands Cheat Sheet
 
@@ -68,7 +68,7 @@ Stop containers:
 docker-compose down
 
 
-
+-----------------------------------------------
 
 
 Folder Structure
