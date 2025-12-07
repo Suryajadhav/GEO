@@ -50,22 +50,22 @@ Commands Cheat Sheet
 
 Build and run containers:
 
-docker-compose up --build
+  docker-compose up --build
 
 
 Run migrations manually:
 
-docker-compose run web python manage.py migrate
+  docker-compose run web python manage.py migrate
 
 
 Create superuser:
 
-docker-compose run web python manage.py createsuperuser
+  docker-compose run web python manage.py createsuperuser
 
 
 Stop containers:
 
-docker-compose down
+  docker-compose down
 
 
 -----------------------------------------------
