@@ -71,19 +71,3 @@ docker-compose down
 -----------------------------------------------
 
 
-Folder Structure
-backend/
-├── Dockerfile
-├── docker-compose.yaml
-├── requirements.txt
-├── geoshop/           # Django project
-│   ├── settings.py
-│   ├── urls.py
-│   └── ...
-├── shops/             # Django app
-│   ├── models.py
-│   ├── views.py
-│   ├── urls.py
-│   ├── forms.py
-│   └── templates/
-└── ...
